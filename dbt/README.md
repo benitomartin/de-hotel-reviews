@@ -1,0 +1,1 @@
+Create Schema in BQ: dbt_hotels_all
