@@ -31,3 +31,12 @@ dbt run --models stg_hotel_reviews --vars '{"is_test_run": false}'
 The country model contains a field wehere to add the country in core and in staging
 
 dbt build willl run all, tests and models
+
+
+# Create environment
+
+Name it Production and use as dataset dbt_hotels_all_prod. Create this schema in advance in BQ in europe-west6
+
+Create job dbt build and run the job
+Then go to account settings, project and under artifacts add the documentation, so we have a link
+to documentaion above
