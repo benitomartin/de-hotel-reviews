@@ -35,4 +35,11 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 models:
   hotels_project:
-    # Applies to all files under models/example/
+    staging:
+      materialized: view
+    core:
+      materialized: table
+
+vars:
+  country_filter: ['Austria', 'France', 'Italy', 'Netherlands', 'Spain', 'UK']
+
