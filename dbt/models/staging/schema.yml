@@ -1,0 +1,10 @@
+
+version: 2
+
+sources:
+    - name: staging
+      database: de-course-394517
+      schema: hotels_all
+
+      tables:
+        - name: hotel_reviews
