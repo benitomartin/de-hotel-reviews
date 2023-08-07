@@ -27,3 +27,7 @@ limit 100
 And run
 
 dbt run --models stg_hotel_reviews --vars '{"is_test_run": false}'
+
+The country model contains a field wehere to add the country in core and in staging
+
+dbt build willl run all, tests and models
