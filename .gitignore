@@ -157,6 +157,7 @@ data/hotel_reviews.csv
 terraform/vars/variables.tfvars
 terraform/.terraform
 terraform/.terraform.lock.hcl
+spark/lib
 
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
