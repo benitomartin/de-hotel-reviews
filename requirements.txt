@@ -18,3 +18,4 @@ fastparquet==2023.7.0
 # Jupyter Notebooks and IPython
 ipykernel
 
+pylint
