@@ -7,15 +7,15 @@ python-dotenv==1.0.0
 # # Cloud Services 
 prefect==2.11.3
 prefect-gcp[cloud_storage]==0.4.5
-pandas_gbq
-gcsfs
-pyspark
+pandas_gbq==0.19.2
+gcsfs==2023.6.0
+pyspark==3.4.1
 
 # Data Serialization and Formats
 pyarrow==12.0.1
 fastparquet==2023.7.0
 
 # Jupyter Notebooks and IPython
-ipykernel
+ipykernel==6.25.1
 
-pylint
+pylint==2.17.5
