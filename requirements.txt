@@ -16,6 +16,7 @@ prefect==2.11.3
 prefect-gcp[cloud_storage]==0.4.5
 pandas_gbq
 gcsfs
+pyspark
 
 # # Database Interaction and ORM
 # pgcli==3.5.0
