@@ -21,8 +21,13 @@ disable = [
     "too-many-locals",              # R0914
     "too-many-statements",          # R0915
     "consider-using-f-string",      # C0209
-    "logging-format-interpolation", # W1202               
-    "logging-fstring-interpolation" # W120
+    "logging-format-interpolation", # W1202
+    "Invalid-variable-name",        # C0103
+    "useless-return",               # R1711
+    ""line-too-long,                # C0301
+    "trailing-whitespace",          # C0303
+    "duplicate-code",               # R0801
+    "logging-fstring-interpolation" # W1203
 ]
 
 
