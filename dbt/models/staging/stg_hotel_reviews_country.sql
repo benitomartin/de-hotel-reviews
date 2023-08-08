@@ -1,4 +1,7 @@
-{{ config(materialized='view') }}
+{{ config(
+    materialized='view'
+
+) }}
 
 
 
@@ -36,10 +39,7 @@ select
     Tags as tags
 
 from review_data
---This filters the data based on the Hotel_Country column using a list of 
--- country values provided via a dbt variable called country_filter
-where Hotel_Country in (select * from unnest({{ var('country_filter') }}))
-
+where hotel_country = "France"
 
 -- dbt build --m <model.sql> --var 'is_test_run: false'
 {% if var('is_test_run', default=true) %}

@@ -2,15 +2,17 @@
 version: 2
 
 sources:
-    - name: staging
+    - name: production
       database: de-course-394517
       schema: hotels_all
 
       tables:
         - name: hotel_reviews
 
+    
+    
 models: 
-    - name: stg_hotel_reviews
+    - name: prod_hotel_reviews
       description: table with hotel reviews and selected columns
       columns:
         - name: hotelid
@@ -18,9 +20,47 @@ models:
           tests:
             - not_null:
                 severity: warn
+                
+        - name: hotel_name
+          description: Name of the hotel.
 
-        - name: hotel_address
-          description: Address of the hotel.
+        - name: hotel_country
+          description: Country where the hotel is located.
+          tests: 
+            - not_null:
+                config:
+                  severity: error
+                  error_if: ">14"
+                  warn_if: ">11"  
+
+        - name: review_date
+          description: Date of the review.
+          tests:
+            - not_null:
+                severity: warn
+
+        - name: reviewer_score
+          description: Score given by the reviewer.
+  
+        - name: average_score
+          description: Average score for the hotel.
+
+        - name: hotel_rating
+          description: Rating description for the hotel.
+
+        - name: reviewer_nationality
+          description: Nationality of the reviewer.
+
+
+
+    - name: prod_hotel_reviews_country
+      description: table with hotel reviews and selected columns
+      columns:
+        - name: hotelid
+          description: unique identifier
+          tests:
+            - not_null:
+                severity: warn
 
         - name: hotel_name
           description: Name of the hotel.
@@ -39,7 +79,7 @@ models:
           tests:
             - not_null:
                 severity: warn
-                
+    
         - name: reviewer_score
           description: Score given by the reviewer.
   
@@ -49,82 +89,8 @@ models:
         - name: hotel_rating
           description: Rating description for the hotel.
 
-        - name: negative_review
-          description: Text of the negative review.
-
-        - name: positive_review
-          description: Text of the positive review.
-
-        - name: total_number_of_reviews
-          description: Total number of reviews for the hotel.
-
         - name: reviewer_nationality
           description: Nationality of the reviewer.
-
-        - name: total_number_of_reviews_reviewer_has_given
-          description: Total number of reviews given by the same reviewer.
-
-        - name: tags
-          description: Tags associated with the review.
-
-
-
-    - name: stg_hotel_reviews_country
-      description: table with hotel reviews and selected columns
-      columns:
-        - name: hotelid
-          description: unique identifier
-          tests:
-            - not_null:
-                severity: warn
-
-        - name: hotel_address
-          description: Address of the hotel.
-
-        - name: hotel_name
-          description: Name of the hotel.
-
-        - name: hotel_country
-          description: Country where the hotel is located.
-          tests: 
-            - not_null:
-                config:
-                  severity: error
-                  error_if: ">14"
-                  warn_if: ">11"  
-
-        - name: review_date
-          description: Date of the review.
-          tests:
-            - not_null:
-                severity: warn
-                
-        - name: reviewer_score
-          description: Score given by the reviewer.
-  
-        - name: average_score
-          description: Average score for the hotel.
-
-        - name: hotel_rating
-          description: Rating description for the hotel.
-
-        - name: negative_review
-          description: Text of the negative review.
-
-        - name: positive_review
-          description: Text of the positive review.
-
-        - name: total_number_of_reviews
-          description: Total number of reviews for the hotel.
-
-        - name: reviewer_nationality
-          description: Nationality of the reviewer.
-
-        - name: total_number_of_reviews_reviewer_has_given
-          description: Total number of reviews given by the same reviewer.
-          
-        - name: tags
-          description: Tags associated with the review.
 
 
 
