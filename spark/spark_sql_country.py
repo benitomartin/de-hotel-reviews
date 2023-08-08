@@ -6,6 +6,8 @@ from pyspark.sql import SparkSession, types
 from pyspark.sql.functions import to_timestamp
 from pyspark.sql.functions import regexp_extract, expr
 
+# pylint: disable=R0801
+
 # Load environment variables from a .env file
 load_dotenv()
 

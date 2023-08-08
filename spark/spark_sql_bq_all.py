@@ -2,7 +2,7 @@ import argparse
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import regexp_extract, expr
 
-
+# pylint: disable=R0801
 
 # Define command-line arguments
 parser = argparse.ArgumentParser(description="Generate a hotel reviews report.")
@@ -26,7 +26,8 @@ input_path = args.input_path
 # Read Parquet data into a DataFrame
 df = spark.read.parquet(f"{input_path}")
 
-
+## Cleanse and transform the data
+# pylint: disable=R0801
 # 1) Transform 'United Kingdom' to 'UK' in the 'Hotel_Address' column
 df = df.withColumn('Hotel_Address', expr("regexp_replace(Hotel_Address, 'United Kingdom', 'UK')"))
 

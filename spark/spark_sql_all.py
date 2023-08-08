@@ -5,6 +5,9 @@ from pyspark.sql import SparkSession, types
 from pyspark.sql.functions import to_timestamp
 from pyspark.sql.functions import regexp_extract, expr
 
+# pylint: disable=R0801
+
+
 # Load environment variables from a .env file
 load_dotenv()
 
@@ -59,6 +62,7 @@ df.write.parquet(f"{SPARK_PARQUET_PATH}", mode = "overwrite")
 df = spark.read.parquet(f"{SPARK_PARQUET_PATH}")
 
 ## Cleanse and transform the data
+# pylint: disable=R0801
 # 1) Transform 'United Kingdom' to 'UK' in the 'Hotel_Address' column
 df = df.withColumn('Hotel_Address', expr("regexp_replace(Hotel_Address, 'United Kingdom', 'UK')"))
 

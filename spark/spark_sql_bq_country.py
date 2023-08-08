@@ -2,7 +2,7 @@ import argparse
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import regexp_extract, expr
 
-
+# pylint: disable=R0801
 
 # Define command-line arguments
 parser = argparse.ArgumentParser(description="Generate a hotel reviews report.")

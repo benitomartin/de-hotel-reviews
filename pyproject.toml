@@ -13,7 +13,7 @@ disable = [
     "ungrouped-imports",            # C0412
     "pointless-string-statement",   # W0105
     "F0401",
-    "too-few-public-methods"        # R0903
+    "too-few-public-methods",       # R0903
     "too-many-function-args",       # E1121
     "trailing-newlines",            # C0305
     "redefined-outer-name",         # W0621
@@ -21,13 +21,8 @@ disable = [
     "too-many-locals",              # R0914
     "too-many-statements",          # R0915
     "consider-using-f-string",      # C0209
-    "logging-format-interpolation", # W1202
-    "Invalid-variable-name",        # C0103
     "useless-return",               # R1711
-    ""line-too-long,                # C0301
-    "trailing-whitespace",          # C0303
-    "duplicate-code",               # R0801
-    "logging-fstring-interpolation" # W1203
+    "duplicate-code"                # R0801
 ]
 
 
