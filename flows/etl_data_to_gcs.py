@@ -38,6 +38,17 @@ def clean(dataset_file: str) -> pd.DataFrame:
 
     return df  # Return the cleaned DataFrame
 
+# Add Hotel Country Column
+@task(retries=3, log_prints=True)
+def add_country_column(df:pd.DataFrame):
+    df['Hotel_Address'] = df['Hotel_Address'].str.replace('United Kingdom', 'UK')
+    df['Hotel_Country'] = df['Hotel_Address'].str.split().str[-1]
+
+    print(f"List of countries: {set(df['Hotel_Country'])}")
+
+    return df  # Return the DataFrame with new column
+
+
 # Define a Prefect task to upload Parquet file to GCS
 @task(retries=3, log_prints=True)
 def write_gcs(prefect_block: str, parquet_path: str, parquet_file: str) -> None:
@@ -80,8 +91,10 @@ def etl_to_gcs():
     # Call the 'clean' task with the CSV file path
     cleaned_df = clean(CSV_PATH)
 
+    final_df = add_country_column(cleaned_df)
+
     # Convert the cleaned DataFrame to Parquet format with Brotli compression
-    cleaned_df.to_parquet(PARQUET_PATH, compression="brotli")
+    final_df.to_parquet(PARQUET_PATH, compression="brotli")
 
     # Get the PREFECT_BLOCK from environment variables
     PREFECT_BLOCK = os.getenv("PREFECT_BLOCK")
