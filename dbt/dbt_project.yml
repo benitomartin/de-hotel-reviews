@@ -42,4 +42,3 @@ models:
 
 vars:
   country_filter: ['Austria', 'France', 'Italy', 'Netherlands', 'Spain', 'UK']
-

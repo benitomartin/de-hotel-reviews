@@ -5,7 +5,7 @@
 
 
 
-with review_data as 
+with review_data as
 (
   select *
     from {{ source('staging', 'hotel_reviews') }}
@@ -13,7 +13,7 @@ with review_data as
 
 -- Select Relevant Columns
 select
-    -- identifiers 
+    -- identifiers
         -- Generate a surrogate key (unique identifier) for the hotel using hotel_address and hotel_name
     {{ dbt_utils.generate_surrogate_key(['hotel_address', 'hotel_name']) }} as hotelid,
     Hotel_Address as hotel_address,
@@ -32,7 +32,7 @@ select
     Negative_Review as negative_review,
     Positive_Review as positive_review,
     cast(Total_Number_of_Reviews as integer) as total_number_of_reviews,
-    
+
     -- Reviewer information
     Reviewer_Nationality as reviewer_nationality,
     cast(Total_Number_of_Reviews_Reviewer_Has_Given as integer) as total_number_of_reviews_reviewer_has_given,

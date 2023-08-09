@@ -11,7 +11,7 @@ There are two files that allow to save locally the clean dataset and a report af
 
 To get a report off al countries run the "all" file:
 
-    python .\spark_sql_all.py 
+    python .\spark_sql_all.py
 
 To get the report of an specific country run the "country" file and add the argument of one of the 5 countries available (Austria, France, Italy, Netherlands, Spain, UK):
 
@@ -37,7 +37,7 @@ Then create a Dataproc Cluster in GCP with the following configuration:
 
 Once the Dataproc Cluster is created, under GCS Buckets, two temporary buckets will be available. Add the "temp" bucket name into both python files in the following line:
 
-    # Set a temporary GCS bucket for intermediate storage 
+    # Set a temporary GCS bucket for intermediate storage
     spark.conf.set('temporaryGcsBucket', 'dataproc-temp-europe-west6-509134254381-b69h2glg')
 
 Upload the python files into your GCS Bucket to create the job (not the temp one)

@@ -113,7 +113,7 @@ The Python version used for this project is Python 3.9.
     pip install -r requirements.txt
 
     or
- 
+
     make install
     ```
 

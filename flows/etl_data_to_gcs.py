@@ -1,4 +1,5 @@
 import os
+
 import pandas as pd
 from dotenv import load_dotenv
 from prefect import flow, task
@@ -7,15 +8,16 @@ from prefect_gcp.cloud_storage import GcsBucket
 # Load environment variables from a .env file
 load_dotenv()
 
+
 # Define a Prefect task for cleaning the dataset
 @task(retries=3, log_prints=True)
 def clean(dataset_file: str) -> pd.DataFrame:
     """
     Clean the dataset by removing duplicate rows and rows with missing values.
-    
+
     Args:
         dataset_file (str): Path to the CSV file containing the dataset.
-        
+
     Returns:
         pd.DataFrame: Cleaned pandas DataFrame.
     """
@@ -28,21 +30,22 @@ def clean(dataset_file: str) -> pd.DataFrame:
     # Print data type of the 'Review_Date' column
     print(f'Dtype is: {df[["Review_Date"]].dtypes}')
 
-    print(f'Nr. Rows before cleaning: {len(df)}')
+    print(f"Nr. Rows before cleaning: {len(df)}")
 
     # Drop duplicate rows and rows with missing values
     df = df.drop_duplicates()
     df = df.dropna()
 
-    print(f'Nr. Rows after cleaning: {len(df)}')
+    print(f"Nr. Rows after cleaning: {len(df)}")
 
     return df  # Return the cleaned DataFrame
 
+
 # Add Hotel Country Column
 @task(retries=3, log_prints=True)
-def add_country_column(df:pd.DataFrame):
-    df['Hotel_Address'] = df['Hotel_Address'].str.replace('United Kingdom', 'UK')
-    df['Hotel_Country'] = df['Hotel_Address'].str.split().str[-1]
+def add_country_column(df: pd.DataFrame):
+    df["Hotel_Address"] = df["Hotel_Address"].str.replace("United Kingdom", "UK")
+    df["Hotel_Country"] = df["Hotel_Address"].str.split().str[-1]
 
     print(f"List of countries: {set(df['Hotel_Country'])}")
 
@@ -54,7 +57,7 @@ def add_country_column(df:pd.DataFrame):
 def write_gcs(prefect_block: str, parquet_path: str, parquet_file: str) -> None:
     """
     Upload a local Parquet file to Google Cloud Storage (GCS) bucket.
-    
+
     Args:
         prefect_block (str): The identifier for the Prefect GCS block.
         parquet_path (str): Local path to the Parquet file.
@@ -63,10 +66,10 @@ def write_gcs(prefect_block: str, parquet_path: str, parquet_file: str) -> None:
     try:
         # Load the GCS bucket using the provided PREFECT_BLOCK
         gcs_block = GcsBucket.load(prefect_block)
-        print(f'Loaded GCS Bucket: {gcs_block.bucket}')
+        print(f"Loaded GCS Bucket: {gcs_block.bucket}")
 
         # Upload the Parquet file to the GCS bucket
-        gcs_block.upload_from_path(from_path=parquet_path, to_path=f'data/{parquet_file}')
+        gcs_block.upload_from_path(from_path=parquet_path, to_path=f"data/{parquet_file}")
 
         print("File uploaded!")
 
@@ -75,6 +78,7 @@ def write_gcs(prefect_block: str, parquet_path: str, parquet_file: str) -> None:
         raise err  # Re-raise the exception to trigger Prefect retries
 
     return
+
 
 # Define a Prefect flow for the ETL (Extract, Transform, Load) process
 @flow
@@ -102,6 +106,7 @@ def etl_to_gcs():
 
     # Call the 'write_gcs' task to upload the Parquet file to GCS
     write_gcs(PREFECT_BLOCK, PARQUET_PATH, PARQUET_FILE)
+
 
 if __name__ == "__main__":
     # Execute the Prefect flow
