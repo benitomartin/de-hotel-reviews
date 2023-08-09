@@ -48,6 +48,8 @@ The project has been structured with the following folders and files:
 * `spark:` batch processing pipeline using spark
 * `terraform:` IaC stream-based pipeline infrastructure in GCP using Terraform
 * `Makefile:` set of execution tasks
+* `.pre-commit-config.yaml`: pre-commit configuration file
+* `pre-commit.md:` readme file of the pre-commit hooks
 * `pyproject.toml:` linting and formatting
 * `requirements.txt:` project requirements
 
