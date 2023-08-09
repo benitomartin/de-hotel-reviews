@@ -15,6 +15,8 @@ env:
     GOOGLE_PROJECT_ID: ${{ secrets.GOOGLE_PROJECT_ID }}
     GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
     GCS_REGION: "europe-west6"
+    ACTIONS_STEP_DEBUG: true
+
 
 jobs:
     authenticate:
@@ -43,6 +45,10 @@ jobs:
             - name: Set BASE_DIR environment variable
               run: echo "BASE_DIR=/home/runner/work/de-hotel-reviews/de-hotel-reviews" >> $GITHUB_ENV
             
+            - name: Debug Environment Variables
+              run: |
+                echo "BASE_DIR: $BASE_DIR"
+
             - name: Set up Python 3.9
               uses: actions/setup-python@v2
               with:
