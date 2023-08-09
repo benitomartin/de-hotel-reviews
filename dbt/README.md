@@ -37,19 +37,19 @@ By default, dbt creates a Development environment. Therefore, here it is shown h
 
 - Run a model selecting a model file under models/staging. The generated table shall be visible in BigQuery:
 
-    dbt run --select stg_hotel_reviews
+        dbt run --select stg_hotel_reviews
 
 - By default the generated table will have 100 rows. To get the complete table run:
 
-    dbt run --models stg_hotel_reviews --vars '{"is_test_run": false}'
+        dbt run --models stg_hotel_reviews --vars '{"is_test_run": false}'
 
 - To run the tests included in the `schema.yml` file run:
 
-    dbt test --select stg_hotel_reviews
+        dbt test --select stg_hotel_reviews
 
 - To run the file and the tests together run:
 
-    dbt run --select stg_hotel_reviews
+        dbt run --select stg_hotel_reviews
 
 ## Production Environment
 
