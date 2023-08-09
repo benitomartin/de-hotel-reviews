@@ -36,7 +36,7 @@ This file is a quick explanation of the pre-commit hooks
     pre-commit run --all-files
     ```
 
-Once all tests are passed commit all changes by-passing the hooks:
+- Once all tests are passed commit all changes by-passing the hooks:
 
     ```bash
     git commit -m "All hooks passed" --no-verify
