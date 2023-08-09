@@ -30,7 +30,7 @@ variable "BQ_DATASET" {
   default = "hotels_all"      # Default BigQuery dataset name is 'hotels_all'
 }
 
-variable "credentials" {
-  description = "Path to GCP service account credentials JSON file"
-  type        = string
-}
+# variable "credentials" {
+#   description = "Path to GCP service account credentials JSON file"
+#   type        = string
+# }

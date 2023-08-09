@@ -99,12 +99,11 @@ jobs:
             #     echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}" > /tmp/credentials.json
             #     gcloud auth activate-service-account --key-file=/tmp/credentials.json
 
-            - name: TF plan
+            - name: TF Init
               working-directory: 'terraform'
               run: terraform init
-              env:
-                  GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
-            - name: TF plan
+              
+            - name: TF Plan
               working-directory: 'terraform' 
               run: terraform plan -var-file=vars/variables.tfvars
               env:
