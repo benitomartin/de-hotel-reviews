@@ -104,13 +104,16 @@ jobs:
               working-directory: 'terraform'
               run: terraform init
               env:
+                
                 GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
 
               
             - name: TF Plan
               working-directory: 'terraform'
               run: |
-                gcloud auth application-default login 
+                gcloud config set project ${{ env.GOOGLE_PROJECT_ID }}
+                gcloud config set compute/region ${{ env.GCS_REGION }}
+                gcloud auth application-default login --quiet
                 terraform plan -var-file=vars/variables.tfvars
               env: 
                 GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
