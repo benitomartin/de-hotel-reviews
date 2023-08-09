@@ -69,7 +69,7 @@ Afterwards some columns have been selected to push the final clean data to a GCP
 
 On a last step two reports have been produced using Looker Studio. 
 
-(https://github.com/benitomartin/de-hotel-reviews/blob/main/images/Hotel%20Reviews.png)
+![hotel reviews](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/Hotel%20Reviews.png)
 
  numerical and categorical features, and suitable scalers and encoders were chosen for the preprocessing pipeline. Subsequently, a **GridSearch** was performed to select the best regression models, with RandomForestRegressor and GradientBoostingRegressor being the top performers, achieving an R2 value of approximately 0.9.
 
