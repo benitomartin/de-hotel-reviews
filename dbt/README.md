@@ -36,27 +36,19 @@ By default, dbt creates a Development environment. Therefore, here it is shown h
 
 Run a model selecting a model file under models/staging. The generated table shall be visible in BigQuery:
 
-    ```bash
     dbt run --select stg_hotel_reviews
-    ```
 
 By default the generated table will have 100 rows. To get the complete table run:
 
-    ```bash
     dbt run --models stg_hotel_reviews --vars '{"is_test_run": false}'
-    ```
 
 To run the tests included in the `schema.yml` file run:
 
-    ```bash
     dbt test --select stg_hotel_reviews
-    ```
 
 To run the file and the tests together run:
 
-    ```bash
     dbt run --select stg_hotel_reviews
-    ```
 ## Prodcution Environment
 
 Create a new environment in dbt cloud called Production and use as dataset a different one than the one used in staging. Create this dataset in advance in BigQuery using the same region as your bucket. This will allow you to separate the development models from the productions models
