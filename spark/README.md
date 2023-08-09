@@ -46,8 +46,8 @@ Upload the python files into your GCS Bucket to create the job (not the temp one
 
 To generate the reports of all hotels and get it in BigQuery run:
 
-    gcloud dataproc jobs submit pyspark --cluster=reviews-hotel --region=europe-west6 --jars=gs://spark-lib/bigquery/spark-bigquery-latest_2.12.jar gs://de-hotel-reviews/scripts/spark_sql_bq_all.py -- -- --input_path=gs://de-hotel-reviews/spark-data/hotel_reviews_spark.parquet/ --output=hotels_all.spark_report
+    gcloud dataproc jobs submit pyspark --cluster=reviews-hotel --region=europe-west6 --jars=gs://spark-lib/bigquery/spark-bigquery-latest_2.12.jar gs://your-bucket/scripts/spark_sql_bq_all.py -- -- --input_path=gs://your-bucket/spark-data/hotel_reviews_spark.parquet/ --output=hotels_all.spark_report
 
 To generate the reports of all hotels in a specific country and get it in BigQuery run this adding the desired country in `--country` and `--output`:
 
-    gcloud dataproc jobs submit pyspark --cluster=reviews-hotel --region=europe-west6 --jars=gs://spark-lib/bigquery/spark-bigquery-latest_2.12.jar gs://de-hotel-reviews/scripts/spark_sql_bq_country.py -- -- --input_path=gs://de-hotel-reviews/spark-data/hotel_reviews_spark.parquet/ --country UK --output=hotels_all.spark_report_UK
+    gcloud dataproc jobs submit pyspark --cluster=reviews-hotel --region=europe-west6 --jars=gs://spark-lib/bigquery/spark-bigquery-latest_2.12.jar gs://your-bucket/scripts/spark_sql_bq_country.py -- -- --input_path=gs://your-bucket/spark-data/hotel_reviews_spark.parquet/ --country UK --output=hotels_all.spark_report_UK
