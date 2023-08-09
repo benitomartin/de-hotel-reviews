@@ -65,25 +65,23 @@ The dataset was obtained from Kaggle and contains various columns with hotel det
 - Remove duplicates
 - Create a new column with the country name
 
-Afterwards some columns have been selected to push the final clean data to a GCP Bucket and Big Query. 
+Afterwards some columns have been selected to deploy the final clean data to a GCP Bucket and Big Query. This is done either using **Prefect** (see [flows](https://github.com/benitomartin/de-hotel-reviews/tree/main/flows) folder), **dbt** (see [dbt](https://github.com/benitomartin/de-hotel-reviews/tree/main/dbt) folder) and **spark** (see [spark](https://github.com/benitomartin/de-hotel-reviews/tree/main/notebooks) folder).
 
-On a last step two reports have been produced using Looker Studio. 
+<h3 align="center"><i>Prefect Deployment</i></h3>
+&nbsp;
+![hotel reviews](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/dbt%20build%20production.png)
+
+On a last step two reports have been produced using Looker Studio after the deployment using dbt. 
 
 ![hotel reviews](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/Hotel%20Reviews.png)
 
- numerical and categorical features, and suitable scalers and encoders were chosen for the preprocessing pipeline. Subsequently, a **GridSearch** was performed to select the best regression models, with RandomForestRegressor and GradientBoostingRegressor being the top performers, achieving an R2 value of approximately 0.9.
+![hotel reviews](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/Hotel%20Reviews%20France.png)
 
-![notebook](https://github.com/benitomartin/mlops-car-prices/assets/116911431/cbaccce2-e3ed-4480-a715-3060d56465af)
-![grafana_dashboard](https://github.com/benitomartin/mlops-car-prices/assets/116911431/6201ae65-383b-44bf-b30f-11ad2b75bf34)
-
-Afterwards, the models underwent testing, model registry and deployment using **MLflow**, **Prefect** and **Flask**. Monitoring of the models was established through **Grafana** and **Adminer** Database. Subsequently, a project infrastructure was set up in **Terraform**, utilizing **AWS** modules such as Kinesis Streams (Producer & Consumer), Lambda (Serving API), S3 Bucket (Model artifacts), and ECR (Image Registry).
-
-![Deployment Prefect UI](https://github.com/benitomartin/mlops-car-prices/assets/116911431/90e7f32c-25ce-4be7-bf38-ba266ca68fb2)
-![manual_deploy_cloudwatch2](https://github.com/benitomartin/mlops-car-prices/assets/116911431/78ce8263-dd8a-4b09-b092-620b3988de99)
 
 Finally, to streamline the development process, a fully automated **CI/CD** pipeline was created using GitHub Actions.
 
-![test github](https://github.com/benitomartin/mlops-car-prices/assets/116911431/0d9e4858-8745-4bb1-bb1c-a6431b98cc98)
+
+                                    ***ADD PHOTO***
 
 
 ### Initial Setup
