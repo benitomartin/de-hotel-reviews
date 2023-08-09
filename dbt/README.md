@@ -1,6 +1,6 @@
 # dbt Data Transformation
 
-This folder contains all files generated in dbt cloud. I recommend emptying the folder and initialize the project in dbt. While connecting the repo in dbt, make sure you add the generated deploy key in dbt to you repo under settings, deploy key (allow write access)
+This folder contains all files generated in dbt cloud. I recommend emptying the folder and initialize the project in dbt. While connecting the repo in dbt, make sure you add the generated deploy key in dbt to your repo under settings, deploy key (allow write access)
 
 Create as Dataset in BigQuery and make sure it is created using the same region as your bucket.
 
@@ -12,6 +12,7 @@ In dbt_project.yml give a project name and put the same name under models in the
 
 Afterwards copy/create the following files from the repo:
 
+- `dbt_project.yml`: give a project name and put the same name under models in the same file
 - `Macros` folder:
   - `get_hotel_rating_description.sql`: contains a macro to create a new column with hotel rating
 - `Models` folder:
@@ -51,11 +52,11 @@ To run the file and the tests together run:
     dbt run --select stg_hotel_reviews
 ## Prodcution Environment
 
-Create a new environment in dbt cloud called Production and use as dataset a different one than the one used in staging. Create this dataset in advance in BigQuery using the same region as your bucket. This will allow you to separate the development models from the productions models
+Create a new environment in dbt cloud called Production and use as dataset a different one than the one used in staging. Create this dataset in advance in BigQuery using the same region as your bucket. This will allow you to separate the development models from the productions models.
 
 In the new Production environments, create a new job and add commands or triggers. As a first approach I recommend as commands:
 - dbt run
 - dbt run --vars '{"is_test_run": false}'
 - dbt test
 
-If you want to geenrate documentation, while creating the job click on `Generate docs on run. This will generate a new Documentation. You can access the documentation under account settings, select project and under artifacts add the generated documentation, so you have a link to the documentation.
+If you want to generate documentation, while creating the job click on `Generate docs on run. This will generate a new Documentation. You can access the documentation under account settings, select project and under artifacts add the generated documentation, so you have a link to the documentation.
