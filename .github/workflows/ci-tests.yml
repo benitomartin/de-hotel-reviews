@@ -93,10 +93,10 @@ jobs:
             - name: Set up Terraform
               uses: hashicorp/setup-terraform@v1
 
-            - name: Authenticate with gcloud credentials
-              run: |
-                echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}" > /tmp/credentials.json
-                gcloud auth activate-service-account --key-file=/tmp/credentials.json
+            # - name: Authenticate with gcloud credentials
+            #   run: |
+            #     echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}" > /tmp/credentials.json
+            #     gcloud auth activate-service-account --key-file=/tmp/credentials.json
     
             - name: TF plan
               working-directory: 'terraform'
