@@ -57,7 +57,7 @@ df.write.parquet(f"{SPARK_PARQUET_PATH}", mode="overwrite")
 # Read the Parquet data into a new DataFrame
 df = spark.read.parquet(f"{SPARK_PARQUET_PATH}")
 
-## Cleanse and transform the data
+# Cleanse and transform the data
 # pylint: disable=R0801
 # 1) Transform 'United Kingdom' to 'UK' in the 'Hotel_Address' column
 df = df.withColumn("Hotel_Address", expr("regexp_replace(Hotel_Address, 'United Kingdom', 'UK')"))
