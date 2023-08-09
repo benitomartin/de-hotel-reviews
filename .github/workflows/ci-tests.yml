@@ -41,10 +41,10 @@ jobs:
         steps:
             - name: Checkout repository
               uses: actions/checkout@v2
-      
+
             - name: Set BASE_DIR environment variable
               run: echo "BASE_DIR=/home/runner/work/de-hotel-reviews/de-hotel-reviews" >> $GITHUB_ENV
-            
+
             - name: Debug Environment Variables
               run: |
                 echo "BASE_DIR: $BASE_DIR"
@@ -52,7 +52,7 @@ jobs:
             - name: Set up Python 3.9
               uses: actions/setup-python@v2
               with:
-                python-version: 3.9   
+                python-version: 3.9
 
             - name: Install dependencies
               working-directory: ./
@@ -63,3 +63,36 @@ jobs:
             - name: Lint
               working-directory: ./
               run: pylint --verbose --recursive=y .
+
+
+    tf-plan:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+
+            - name: Set BASE_DIR environment variable
+              run: echo "BASE_DIR=${{ github.workspace }}" >> $GITHUB_ENV
+
+            - name: Debug Environment Variables
+              run: |
+                    echo "BASE_DIR: $BASE_DIR"
+                    echo "DATA_PATH: $DATA_PATH"
+
+            - name: Debug Terraform Directory
+              run: |
+                ls -l ./terraform
+
+            - name: Configure GCP Credentials
+              uses: google-github-actions/setup-gcloud@v0.2.0
+              with:
+                  version: '442.0.0'  # Specify the desired version of Google Cloud SDK
+                  service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+
+            - name: Set up Terraform
+              uses: hashicorp/setup-terraform@v1
+
+            - name: TF plan
+              working-directory: 'terraform'
+              run: |
+                    terraform init
+                    terraform plan -var-file=vars/variables.tfvars
