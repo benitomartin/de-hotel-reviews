@@ -29,3 +29,8 @@ variable "BQ_DATASET" {
   type = string               # Type constraint for the 'BQ_DATASET' variable (string)
   default = "hotels_all"      # Default BigQuery dataset name is 'hotels_all'
 }
+
+variable "credentials" {
+  description = "Path to GCP service account credentials JSON file"
+  type        = string
+}
