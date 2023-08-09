@@ -2,9 +2,11 @@
 
 # Data Manipulation and Analysis
 pandas==2.0.3
+
+# Environment Variables
 python-dotenv==1.0.0
 
-# # Cloud Services 
+# Cloud Services 
 prefect==2.11.3
 prefect-gcp[cloud_storage]==0.4.5
 pandas_gbq==0.19.2
@@ -18,4 +20,5 @@ fastparquet==2023.7.0
 # Jupyter Notebooks and IPython
 ipykernel==6.25.1
 
+# Linter
 pylint==2.17.5

@@ -2,7 +2,6 @@
 
 ![dataset-cover](https://github.com/benitomartin/templates/assets/116911431/88d28c42-a2c8-4632-90c5-f95b57bc0004)
 
-
 The dataset used for this project has been downloaded from [Kaggle](https://www.kaggle.com/datasets/hellbuoy/car-price-prediction) and a preliminary data analysis was performed (see [notebooks](https://github.com/benitomartin/de-hotel-reviews/tree/main/notebooks) folder), to get some insights for the further project development.
 
 Below you can find some instructions to understand the project content. Feel free to clone this repo :wink:
@@ -24,11 +23,10 @@ Below you can find some instructions to understand the project content. Feel fre
 ![Terraform](https://img.shields.io/badge/terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white)
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 
-
 * Data Analysis & Exploration: **SQL/Python**
 * Cloud: **Google Cloud Platform**
-   * Data Lake - **Google Cloud Storage**
-   * Data Warehouse: **BigQuery**
+  * Data Lake - **Google Cloud Storage**
+  * Data Warehouse: **BigQuery**
 * Infrastructure as Code (IaC): **Terraform**
 * Workflow Orchestration: **Prefect**
 * Distributed Processing: **Spark**
@@ -40,26 +38,26 @@ Below you can find some instructions to understand the project content. Feel fre
 
 The project has been structured with the following folders and files:
 
-- `.github:` contains the CI/CD files (GitHub Actions)
-- `data:` raw dataset, saved parquet files and data processed using Spark
-- `dbt:` data transformation done using dbt
-- `flows`: workflow orchestration pipeline
-- `images`: printouts of results
-- `looker`: reports from looker studio
-- `notebooks:` EDA performed at the beginning of the project to stablish a baseline
-- `spark`: batch processsing pipeline using spark 
-- `terraform:` IaC stream-based pipeline infrastructure in GCP using Terraform
-- `Makefile:` set of execution tasks
-- `pyproject.toml:` linting and formatting
-- `requirements.txt:` project requirements
+* `.github:` contains the CI/CD files (GitHub Actions)
+* `data:` raw dataset, saved parquet files and data processed using Spark
+* `dbt:` data transformation done using dbt
+* `flows:` workflow orchestration pipeline
+* `images:` printouts of results
+* `looker:` reports from looker studio
+* `notebooks:` EDA performed at the beginning of the project to stablish a baseline
+* `spark:` batch processing pipeline using spark
+* `terraform:` IaC stream-based pipeline infrastructure in GCP using Terraform
+* `Makefile:` set of execution tasks
+* `pyproject.toml:` linting and formatting
+* `requirements.txt:` project requirements
 
 ## Project Description
 
-The dataset was obtained from Kaggle and contains various columns with hotel details and reviews of 5 countries ('Austria', 'France', 'Italy', 'Netherlands', 'Spain', 'UK'). To prepare the data an **Exploratory Data Analysis** was conducted. The following actions are performed either using pandas or spark in order to get a clean data set:
+The dataset was obtained from Kaggle and contains various columns with hotel details and reviews of 5 countries ('Austria', 'France', 'Italy', 'Netherlands', 'Spain', 'UK'). To prepare the data an **Exploratory Data Analysis** was conducted. The following actions are performed either using pandas or spark to get a clean data set:
 
-- Remove rows with NaN
-- Remove duplicates
-- Create a new column with the country name
+* Remove rows with NaN
+* Remove duplicates
+* Create a new column with the country name
 
 Afterwards some columns have been selected the final clean data are ingested to a GCP Bucket and Big Query. This is done either using **Prefect** (see [flows](https://github.com/benitomartin/de-hotel-reviews/tree/main/flows) folder), **dbt** (see [dbt](https://github.com/benitomartin/de-hotel-reviews/tree/main/dbt) folder) and **spark** (see [spark](https://github.com/benitomartin/de-hotel-reviews/tree/main/notebooks) folder).
 
@@ -68,15 +66,12 @@ Afterwards some columns have been selected the final clean data are ingested to 
 
 ![gcs deployment](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/etl_to_gcs%20flow.png)
 
-
 ![bq deployment](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/etl_gcs_to_bq%20flow.png)
-
 
 <h3 align="center"><i>dbt Data Ingestion</i></h3>
 &nbsp;
 
 ![dbt deployment](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/dbt%20build%20production.png)
-
 
 <h3 align="center"><i>Spark Data Ingestion</i></h3>
 &nbsp;
@@ -89,57 +84,62 @@ Afterwards some columns have been selected the final clean data are ingested to 
 
 ![hotel reviews](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/Hotel%20Reviews%20France.png)
 
-
 ## CI/CD
-Finally, to streamline the development process, a fully automated **CI/CD** pipeline was created using GitHub Actions.
 
+Finally, to streamline the development process, a fully automated **CI/CD** pipeline was created using GitHub Actions.
 
                                     ***ADD PHOTO***
 
+## Project Set Up
 
-### Initial Setup
+The Python version used for this project is Python 3.9.
 
-For this course, we'll use a free version (upto EUR 300 credits). 
+1. Clone the repo (or download as zip):
 
-1. Create an account with your Google email ID 
-2. Setup your first [project](https://console.cloud.google.com/) if you haven't already
-    * eg. "DTC DE Course", and note down the "Project ID" (we'll use this later when deploying infra with TF)
-3. Setup [service account & authentication](https://cloud.google.com/docs/authentication/getting-started) for this project
-    * Grant `Viewer` role to begin with.
-    * Download service-account-keys (.json) for auth.
-4. Download [SDK](https://cloud.google.com/sdk/docs/quickstart) for local setup
-5. Set environment variable to point to your downloaded GCP keys:
-   ```shell
-   conda install -c conda-forge google-cloud-sdk
-   $env:GOOGLE_APPLICATION_CREDENTIALS="C:\Users\bmart\Downloads\de-course-394517-9a428abdb6c2.json"
-   export GOOGLE_APPLICATION_CREDENTIALS="<path/to/your/service-account-authkeys>.json"
-   
-   # Refresh token/session, and verify authentication
-   gcloud auth application-default login
+   ```bash
+   git clone https://github.com/benitomartin/de-hotel-reviews.git
    ```
-   
-### Setup for Access
+
+2. Create the virtual environment named `main-env` using Conda with Python version 3.9:
+
+   ```bash
+   conda create -n main-env python=3.9
+   conda activate main-env
+   ```
+
+3. Execute the `requirements.txt` script and install the project dependencies:
+
+    ```bash
+    pip install -r requirements.txt
+
+    or
  
-1. [IAM Roles](https://cloud.google.com/storage/docs/access-control/iam-roles) for Service account:
-   * Go to the *IAM* section of *IAM & Admin* https://console.cloud.google.com/iam-admin/iam
-   * Click the *Edit principal* icon for your service account.
-   * Add these roles in addition to *Viewer* : **Storage Admin** + **Storage Object Admin** + **BigQuery Admin**
-   
-2. Enable these APIs for your project:
-   * https://console.cloud.google.com/apis/library/iam.googleapis.com
-   * https://console.cloud.google.com/apis/library/iamcredentials.googleapis.com
-   
-3. Please ensure `GOOGLE_APPLICATION_CREDENTIALS` env-var is set.
-   ```shell
-   export GOOGLE_APPLICATION_CREDENTIALS="<path/to/your/service-account-authkeys>.json"
-   ```
-IAM Roles:
-    BigQuery Admin
-    Dataproc Administrator
-    Storage Admin
-    Storage Object Admin
-    Viewer
+    make install
+    ```
 
-### Terraform Workshop to create GCP Infra
-Continue [here](./terraform): `week_1_basics_n_setup/1_terraform_gcp/terraform`
+4. Install terraform:
 
+   ```bash
+    conda install -c conda-forge terraform
+    ```
+
+Each project folder contains a **README.md** file with instructions about how to run the code. I highly recommend creating a virtual environment for each one. Additionally, please note that an **GCP Account**, credentials, and proper IAM roles are necessary for the scripts to function correctly. The following IAM Roles have been used for this project:
+
+* BigQuery Admin
+* BigQuery Data Editor
+* BigQuery Job User
+* BigQuery User
+* Dataproc Administrator
+* Storage Admin
+* Storage Object Admin
+* Storage Object Creator
+* Storage Object Viewer
+* Viewer
+
+## Best Practices
+
+The following best practices have been implemented:
+
+* [X] There is a Makefile
+* [X] There is a CI/CD pipeline
+* [X] Linter and code formatter are used
