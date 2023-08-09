@@ -55,7 +55,7 @@ By default, dbt creates a Development environment. Therefore, here it is shown h
 
 Create a new environment in dbt cloud called Production and use as dataset a different one than the one used in staging. Create this dataset in advance in BigQuery using the same region as your bucket. This will allow you to separate the development models from the productions models.
 
-In the new Production environments, create a new job and add commands or triggers. As a first approach I recommend as commands:
+In the new Production environment, create a new job and add commands or triggers. As a first approach I recommend as commands:
 
 - dbt run
 - dbt run --vars '{"is_test_run": false}'
