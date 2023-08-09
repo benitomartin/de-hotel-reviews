@@ -28,7 +28,7 @@ Afterwards copy/create the following files from the repo:
 
 Now in the dbt terminal run the following to install the `packages.yml`:
 
-    ```bash
+    ```shell
     dbt deps
     ```
 
