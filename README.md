@@ -81,7 +81,7 @@ Afterwards some columns have been selected the final clean data are ingested to 
 <h3 align="center"><i>Spark Data Ingestion</i></h3>
 &nbsp;
 
-https://github.com/benitomartin/de-hotel-reviews/blob/main/images/spark%20deployment%20all%20hotels.png
+![spark deployment](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/spark%20deployment%20all%20hotels.png)
 
 ## Visualization
 
