@@ -25,20 +25,16 @@ Below you can find some instructions to understand the project content. Feel fre
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 
 
+* Data Analysis & Exploration: **SQL/Python**
 * Cloud: **Google Cloud Platform**
+   * Data Lake - **Google Cloud Storage**
+   * Data Warehouse: **BigQuery**
 * Infrastructure as Code (IaC): **Terraform**
 * Workflow Orchestration: **Prefect**
-- Data Lake - **Google Cloud Storage**
-* Data Warehouse: **BigQuery**
-* Batch Processing: **Spark**
+* Distributed Processing: **Spark**
 * Data Transformation: **dbt**
 * Data Visualization: **Looker Studio**
 * CICD: **Git**
-
-### Project infrastructure modules in GCP:
-* Google Cloud Storage (GCS): Data Lake
-* BigQuery: Data Warehouse
-
 
 ## Project Structure
 
@@ -65,9 +61,9 @@ The dataset was obtained from Kaggle and contains various columns with hotel det
 - Remove duplicates
 - Create a new column with the country name
 
-Afterwards some columns have been selected to deploy the final clean data to a GCP Bucket and Big Query. This is done either using **Prefect** (see [flows](https://github.com/benitomartin/de-hotel-reviews/tree/main/flows) folder), **dbt** (see [dbt](https://github.com/benitomartin/de-hotel-reviews/tree/main/dbt) folder) and **spark** (see [spark](https://github.com/benitomartin/de-hotel-reviews/tree/main/notebooks) folder).
+Afterwards some columns have been selected the final clean data are ingested to a GCP Bucket and Big Query. This is done either using **Prefect** (see [flows](https://github.com/benitomartin/de-hotel-reviews/tree/main/flows) folder), **dbt** (see [dbt](https://github.com/benitomartin/de-hotel-reviews/tree/main/dbt) folder) and **spark** (see [spark](https://github.com/benitomartin/de-hotel-reviews/tree/main/notebooks) folder).
 
-<h3 align="center"><i>Prefect Deployment</i></h3>
+<h3 align="center"><i>Prefect Data Ingestion</i></h3>
 &nbsp;
 
 ![gcs deployment](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/etl_to_gcs%20flow.png)
@@ -76,10 +72,16 @@ Afterwards some columns have been selected to deploy the final clean data to a G
 ![bq deployment](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/etl_gcs_to_bq%20flow.png)
 
 
-<h3 align="center"><i>dbt Deployment</i></h3>
+<h3 align="center"><i>dbt Data Ingestion</i></h3>
 &nbsp;
 
 ![dbt deployment](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/dbt%20build%20production.png)
+
+
+<h3 align="center"><i>Spark Data Ingestion</i></h3>
+&nbsp;
+
+https://github.com/benitomartin/de-hotel-reviews/blob/main/images/spark%20deployment%20all%20hotels.png
 
 ## Visualization
 
