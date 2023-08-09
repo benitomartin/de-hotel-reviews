@@ -34,7 +34,6 @@ jobs:
               run: |
                     gcloud config set project ${{ env.GOOGLE_PROJECT_ID }}
                     gcloud config set compute/region ${{ env.GCS_REGION }}
-                    # Your commands using Google Cloud SDK here
 
     tests:
         runs-on: ubuntu-latest
@@ -86,6 +85,10 @@ jobs:
               with:
                   version: '442.0.0'  # Specify the desired version of Google Cloud SDK
                   service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+            - name: Authenticate and use Google Cloud SDK
+              run: |
+                    gcloud config set project ${{ env.GOOGLE_PROJECT_ID }}
+                    gcloud config set compute/region ${{ env.GCS_REGION }}
 
             - name: Set up Terraform
               uses: hashicorp/setup-terraform@v1
