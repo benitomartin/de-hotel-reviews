@@ -15,14 +15,14 @@ Below you can find some instructions to understand the project content. Feel fre
 ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
 ![Anaconda](https://img.shields.io/badge/Anaconda-%2344A833.svg?style=for-the-badge&logo=anaconda&logoColor=white)
 ![Apache Spark](https://img.shields.io/badge/Apache%20Spark-E25A1C.svg?style=for-the-badge&logo=Apache-Spark&logoColor=white)
+![Prefect](https://img.shields.io/badge/Prefect-024DFD.svg?style=for-the-badge&logo=Prefect&logoColor=white)
+![dbt](https://img.shields.io/badge/dbt-FF694B.svg?style=for-the-badge&logo=dbt&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=white)
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
 ![Google Cloud](https://img.shields.io/badge/GoogleCloud-%234285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=white)
+![Looker Studio](https://img.shields.io/badge/Looker-4285F4.svg?style=for-the-badge&logo=Looker&logoColor=white)
 ![Terraform](https://img.shields.io/badge/terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white)
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
-
-
-## Technologies and Tools
 
 
 * Cloud: **Google Cloud Platform**
@@ -33,11 +33,57 @@ Below you can find some instructions to understand the project content. Feel fre
 * Batch Processing: **Spark**
 * Data Transformation: **dbt**
 * Data Visualization: **Looker Studio**
-* CICD: ***Git***
+* CICD: **Git**
 
 ### Project infrastructure modules in GCP:
 * Google Cloud Storage (GCS): Data Lake
 * BigQuery: Data Warehouse
+
+
+## Project Structure
+
+The project has been structured with the following folders and files:
+
+- `.github:` contains the CI/CD files (GitHub Actions)
+- `data:` raw dataset, saved parquet files and data processed using Spark
+- `dbt:` data transformation done using dbt
+- `flows`: workflow orchestration pipeline
+- `images`: printouts of results
+- `looker`: reports from looker studio
+- `notebooks:` EDA performed at the beginning of the project to stablish a baseline
+- `spark`: batch processsing pipeline using spark 
+- `terraform:` IaC stream-based pipeline infrastructure in GCP using Terraform
+- `Makefile:` set of execution tasks
+- `pyproject.toml:` linting and formatting
+- `requirements.txt:` project requirements
+
+## Project Description
+
+The dataset was obtained from Kaggle and contains various columns with hotel details and reviews of 5 countries ('Austria', 'France', 'Italy', 'Netherlands', 'Spain', 'UK'). To prepare the data an **Exploratory Data Analysis** was conducted. The following actions are performed either using pandas or spark in order to get a clean data set:
+
+- Remove rows with NaN
+- Remove duplicates
+- Create a new column with the country name
+
+Afterwards some columns have been selected to push the final clean data to a GCP Bucket and Big Query. 
+
+On a last step two reports have been produced using Looker Studio. 
+
+(https://github.com/benitomartin/de-hotel-reviews/blob/main/images/Hotel%20Reviews.png)
+
+ numerical and categorical features, and suitable scalers and encoders were chosen for the preprocessing pipeline. Subsequently, a **GridSearch** was performed to select the best regression models, with RandomForestRegressor and GradientBoostingRegressor being the top performers, achieving an R2 value of approximately 0.9.
+
+![notebook](https://github.com/benitomartin/mlops-car-prices/assets/116911431/cbaccce2-e3ed-4480-a715-3060d56465af)
+![grafana_dashboard](https://github.com/benitomartin/mlops-car-prices/assets/116911431/6201ae65-383b-44bf-b30f-11ad2b75bf34)
+
+Afterwards, the models underwent testing, model registry and deployment using **MLflow**, **Prefect** and **Flask**. Monitoring of the models was established through **Grafana** and **Adminer** Database. Subsequently, a project infrastructure was set up in **Terraform**, utilizing **AWS** modules such as Kinesis Streams (Producer & Consumer), Lambda (Serving API), S3 Bucket (Model artifacts), and ECR (Image Registry).
+
+![Deployment Prefect UI](https://github.com/benitomartin/mlops-car-prices/assets/116911431/90e7f32c-25ce-4be7-bf38-ba266ca68fb2)
+![manual_deploy_cloudwatch2](https://github.com/benitomartin/mlops-car-prices/assets/116911431/78ce8263-dd8a-4b09-b092-620b3988de99)
+
+Finally, to streamline the development process, a fully automated **CI/CD** pipeline was created using GitHub Actions.
+
+![test github](https://github.com/benitomartin/mlops-car-prices/assets/116911431/0d9e4858-8745-4bb1-bb1c-a6431b98cc98)
 
 
 ### Initial Setup
