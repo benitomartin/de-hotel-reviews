@@ -140,6 +140,6 @@ Each project folder contains a **README.md** file with instructions about how to
 
 The following best practices have been implemented:
 
-* [X] There is a Makefile
-* [X] There is a CI/CD pipeline
-* [X] Linter and code formatter are used
+* :white_check_mark: There is a Makefile
+* :white_check_mark: There is a CI/CD pipeline
+* :white_check_mark: Linter and code formatter are used
