@@ -30,3 +30,8 @@ repos:
             "-sn", # Don't display the score
             "--recursive=y"
             ]
+- repo: https://github.com/pycqa/flake8
+  rev: 6.1.0
+  hooks:
+    - id: flake8
+      args: ['--max-line-length=100']

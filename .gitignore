@@ -154,7 +154,6 @@ cython_debug/
 
 # Files
 data/hotel_reviews.csv
-terraform/vars/variables.tfvars
 terraform/.terraform
 terraform/.terraform.lock.hcl
 spark/lib
