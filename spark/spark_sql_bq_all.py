@@ -63,5 +63,8 @@ output = args.output
 # Write the report DataFrame to BigQuery
 report_df.write.format('bigquery') \
     .option('table', output) \
+    .mode('overwrite') \
     .save()
-    
+
+# Start an interactive session to check results
+spark.sql(report_query).show()
