@@ -89,7 +89,6 @@ jobs:
               run: |
                     gcloud config set project ${{ env.GOOGLE_PROJECT_ID }}
                     gcloud config set compute/region ${{ env.GCS_REGION }}
-                    gcloud auth activate-service-account --key-file=${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
 
 
             - name: Set up Terraform
@@ -104,5 +103,5 @@ jobs:
               working-directory: 'terraform'
               run: |
                         terraform init
-                        # gcloud auth application-default login --quiet
+                        gcloud auth application-default login --quiet
                         terraform plan -var-file=vars/variables.tfvars
