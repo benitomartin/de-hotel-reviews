@@ -1,24 +1,43 @@
+# Pre-commit hooks
 
-conda install -c conda-forge pre-commit
+This file is a quick explanation of the pre-commit hooks
 
-Create the config.yaml
+## Set up
+
+- Install pre-commit:
+
+    ```bash
+    conda install -c conda-forge pre-commit
+    ```
+
+- Create the config.yaml and add the desired hooks:
+
+    ```bash
     pre-commit sample-config > .pre-commit-config.yaml
+    ```
 
-Run pre-commit install
-(precommit) PS C:\Users\bmart\OneDrive\12_Data_Engineering\de-hotel-reviews> pre-commit install
-output --> pre-commit installed at .git\hooks\pre-commit
+- To create/install the hook run:
 
+    ```bash
+    pre-commit install
+    ```
 
-git add .
+- Run the hooks by committing files that have not yet been commited:
 
-git commit -m "hooks"
+    ```bash
+    git add .
 
-This will initialize the hooks
+    git commit -m "hooks"
+    ```
 
-git status to see the modified files
+- To rull all files:
 
-git diff to see the modifications
+    ```bash
+    pre-commit run --all-files
+    ```
 
+Once all tests are passed commit all changes by-passing the hooks:
 
-To rull all files even if they are not in the commit
-pre-commit run --all-files
+    ```bash
+    git commit -m "All hooks passed" --no-verify
+    ```

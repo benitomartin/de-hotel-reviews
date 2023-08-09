@@ -140,6 +140,7 @@ Each project folder contains a **README.md** file with instructions about how to
 
 The following best practices have been implemented:
 
-* :white_check_mark: There is a Makefile
-* :white_check_mark: There is a CI/CD pipeline
-* :white_check_mark: Linter and code formatter are used
+* :white_check_mark: Makefile
+* :white_check_mark: CI/CD pipeline
+* :white_check_mark: Linter and code formatter
+* :white_check_mark: Pre-commit hooks
