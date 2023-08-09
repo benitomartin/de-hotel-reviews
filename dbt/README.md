@@ -1,42 +1,71 @@
-Create Schema in BQ (pur region europe-west6 in the query): `dbt_hotels_all`  and add this as Dataset while creaing the project in dbt. By running the dbt run, the table will be saved here
+# dbt Data Transformation
 
-Give a project name and put the same name under models in dbt_project.yml
+This folder contains all files generated in dbt cloud. I recommend emptying the folder and initialize the project in dbt. While connecting the repo in dbt, make sure you add the generated deploy key in dbt to you repo under settings, deploy key (allow write access)
 
+Create as Dataset in BigQuery and make sure it is created using the same region as your bucket.
 
-dbt run --select stg_hotel_reviews
+While creating the project in dbt, use the sane dataset name and connect it to the subfolder `dbt` of the repo.
 
-Add the macro in the macros folder and in the stg_hotel_reviews
+Initialize the project in dbt using a new branch. Otherwise, you will only have read-only access to your files and can't be modified.
 
-Install the packages.yml running dbt deps
+In dbt_project.yml give a project name and put the same name under models in the same file
 
-Create a unique key with:
+Afterwards copy/create the following files from the repo:
 
-    {{ dbt_utils.generate_surrogate_key(['hotel_address', 'hotel_name']) }} as hotelid,
+- `Macros` folder:
+  - `get_hotel_rating_description.sql`: contains a macro to create a new column with hotel rating
+- `Models` folder:
+  - `Core` folder: contains the production model
+    - `schema.yml`: model schema including tests
+    - `prod_hotel_reviews.sql`: model to get all reviews from all countries
+    - `prod_hotel_reviews_country.sql`: model to get all reviews from one country. You must select a country name inside the file
+  - `Staging` folder: contains the staging model
+    - `schema.yml`: model schema including tests
+    - `stg_hotel_reviews.sql`: model to get all reviews from all countries
+    - `stg_hotel_reviews_country.sql`: model to get all reviews from one country. You must select a country name inside the file
 
+- `packages.yml`: contains dbt-labs/dbt_utils
 
-Add the variable
+Now in the dbt terminal run the following to install the `packages.yml`:
 
--- dbt build --m <model.sql> --var 'is_test_run: false'
-{% if var('is_test_run', default=true) %}
+    ```bash
+    dbt deps
+    ```
 
--- Limit the result to 100 rows
-limit 100
+## Development Environment
 
-{% endif %}
+By default, dbt creates a Development environment. Therefore, here it is shown how to run the files under models/staging. For production go to the next chapter below
 
-And run
+Run a model selecting a model file under models/staging. The generated table shall be visible in BigQuery:
 
-dbt run --models stg_hotel_reviews --vars '{"is_test_run": false}'
+    ```bash
+    dbt run --select stg_hotel_reviews
+    ```
 
-The country model contains a field wehere to add the country in core and in staging
+By default the generated table will have 100 rows. To get the complete table run:
 
-dbt build willl run all, tests and models
+    ```bash
+    dbt run --models stg_hotel_reviews --vars '{"is_test_run": false}'
+    ```
 
+To run the tests included in the `schema.yml` file run:
 
-# Create environment
+    ```bash
+    dbt test --select stg_hotel_reviews
+    ```
 
-Name it Production and use as dataset dbt_hotels_all_prod. Create this schema in advance in BQ in europe-west6
+To run the file and the tests together run:
 
-Create job dbt build and run the job
-Then go to account settings, project and under artifacts add the documentation, so we have a link
-to documentaion above
+    ```bash
+    dbt run --select stg_hotel_reviews
+    ```
+## Prodcution Environment
+
+Create a new environment in dbt cloud called Production and use as dataset a different one than the one used in staging. Create this dataset in advance in BigQuery using the same region as your bucket. This will allow you to separate the development models from the productions models
+
+In the new Production environments, create a new job and add commands or triggers. As a first approach I recommend as commands:
+- dbt run
+- dbt run --vars '{"is_test_run": false}'
+- dbt test
+
+If you want to geenrate documentation, while creating the job click on `Generate docs on run. This will generate a new Documentation. You can access the documentation under account settings, select project and under artifacts add the generated documentation, so you have a link to the documentation.

@@ -27,5 +27,5 @@ variable "storage_class" {
 variable "BQ_DATASET" {
   description = "BigQuery Dataset that raw data (from GCS) will be written to"
   type = string               # Type constraint for the 'BQ_DATASET' variable (string)
-  default = "hotels_all"  # Default BigQuery dataset name is 'trips_data_all'
+  default = "hotels_all"      # Default BigQuery dataset name is 'hotels_all'
 }

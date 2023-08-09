@@ -1,9 +1,28 @@
-Once the Bucket is available in GCS
+# Prefect Workflow Orchestration
 
-Create prefect block hotels-gcs and hotels-gcs-creds and add the json credential from the service account. The service accoutn shall have
+A GCS Bucket must be available in GCS to run this code.
 
-	
-BigQuery Admin
-Storage Admin
-Storage Object Admin
-Viewer
+Then create prefect block with the following configuration:
+
+- Name of the Bucket: your GCS Bucket
+- Add GCS credentials of the service account of your GCS Bucket
+
+To upload the data to the GCS Bucket and send them to BigQuery follow the net steps:
+
+1. Start Prefect Server:
+
+   ```bash
+   prefect server start
+   ```
+
+2. Upload the files to the GCS Bucket:
+
+   ```bash
+   python .\etl_data_to_gcs.py 
+   ```
+
+3. Send the data to BigQuery:
+
+    ```bash
+     python .\etl_gcs_to_bq.py
+    ```
