@@ -101,7 +101,18 @@ jobs:
 
             - name: TF plan
               working-directory: 'terraform'
-              run: |
-                        terraform init
-                        gcloud auth application-default login --quiet
-                        terraform plan -var-file=vars/variables.tfvars
+              run: terraform init
+              env:
+                  GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+            - name: TF plan
+              working-directory: 'terraform' 
+              run: terraform plan -var-file=vars/variables.tfvars
+              env:
+                   GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+    
+              
+              
+            #   run: |
+            #             terraform init
+            #             gcloud auth application-default login --quiet
+            #             terraform plan -var-file=vars/variables.tfvars
