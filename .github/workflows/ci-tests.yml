@@ -107,16 +107,29 @@ jobs:
                 
                 GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
 
-              
+            - name: Set GOOGLE_APPLICATION_CREDENTIALS for Terraform
+              run: echo "$GOOGLE_APPLICATION_CREDENTIALS" > /tmp/google-credentials.json
+              env:
+                  GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+        
             - name: TF Plan
               working-directory: 'terraform'
-              run: |
-                gcloud config set project ${{ env.GOOGLE_PROJECT_ID }}
-                gcloud config set compute/region ${{ env.GCS_REGION }}
-                gcloud auth application-default login --quiet
-                terraform plan -var-file=vars/variables.tfvars
-              env: 
-                GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+              run: terraform plan -var-file=vars/variables.tfvars
+              env:
+                  GOOGLE_APPLICATION_CREDENTIALS: /tmp/google-credentials.json   
+                
+
+
+
+            # - name: TF Plan
+            #   working-directory: 'terraform'
+            #   run: |
+            #     gcloud config set project ${{ env.GOOGLE_PROJECT_ID }}
+            #     gcloud config set compute/region ${{ env.GCS_REGION }}
+            #     gcloud auth application-default login --quiet
+            #     terraform plan -var-file=vars/variables.tfvars
+            #   env: 
+            #     GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
                 
 
               
