@@ -37,6 +37,12 @@ jobs:
     tests:
         runs-on: ubuntu-latest
         steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+      
+            - name: Set BASE_DIR environment variable
+              run: echo "BASE_DIR=/home/runner/work/de-hotel-reviews/de-hotel-reviews" >> $GITHUB_ENV
+            
             - name: Set up Python 3.9
               uses: actions/setup-python@v2
               with:
