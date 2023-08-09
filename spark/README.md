@@ -10,16 +10,12 @@ There are two files that allow to save locally the clean dataset and a report af
 
 To get a report off al countries run the "all" file:
 
-    ```bash
     python .\spark_sql_all.py 
-    ```
 
 To get the report of an specific country run the "country" file and add the argument of one of the 5 countries available (Austria, France, Italy, Netherlands, Spain, UK):
 
-        ```bash
         python .\spark_sql_country.py  --country UK
-        ```
-
+        
 ## Saving the files in the cloud
 
 A GCS Bucket must be available in GCS to run this code. Change the code accordingly and add your bucket name.
