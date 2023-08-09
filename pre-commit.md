@@ -18,3 +18,7 @@ This will initialize the hooks
 git status to see the modified files
 
 git diff to see the modifications
+
+
+To rull all files even if they are not in the commit
+pre-commit run --all-files

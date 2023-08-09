@@ -16,7 +16,7 @@ variable "region" {
 
 variable "bucket_name" {
   description = "The name of the GC Storage Bucket. Must be globally unique."
-  default = ""  
+  default = ""
 }
 
 variable "storage_class" {

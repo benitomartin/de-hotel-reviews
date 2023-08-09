@@ -9,9 +9,9 @@ sources:
       tables:
         - name: hotel_reviews
 
-    
-    
-models: 
+
+
+models:
     - name: prod_hotel_reviews
       description: table with hotel reviews and selected columns
       columns:
@@ -20,18 +20,18 @@ models:
           tests:
             - not_null:
                 severity: warn
-                
+
         - name: hotel_name
           description: Name of the hotel.
 
         - name: hotel_country
           description: Country where the hotel is located.
-          tests: 
+          tests:
             - not_null:
                 config:
                   severity: error
                   error_if: ">14"
-                  warn_if: ">11"  
+                  warn_if: ">11"
 
         - name: review_date
           description: Date of the review.
@@ -41,7 +41,7 @@ models:
 
         - name: reviewer_score
           description: Score given by the reviewer.
-  
+
         - name: average_score
           description: Average score for the hotel.
 
@@ -67,22 +67,22 @@ models:
 
         - name: hotel_country
           description: Country where the hotel is located.
-          tests: 
+          tests:
             - not_null:
                 config:
                   severity: error
                   error_if: ">14"
-                  warn_if: ">11"  
+                  warn_if: ">11"
 
         - name: review_date
           description: Date of the review.
           tests:
             - not_null:
                 severity: warn
-    
+
         - name: reviewer_score
           description: Score given by the reviewer.
-  
+
         - name: average_score
           description: Average score for the hotel.
 
@@ -91,7 +91,3 @@ models:
 
         - name: reviewer_nationality
           description: Nationality of the reviewer.
-
-
-
-

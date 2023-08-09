@@ -1,5 +1,5 @@
  {#
-    This macro returns the description of the hotel_rating 
+    This macro returns the description of the hotel_rating
 #}
 
 
@@ -12,6 +12,3 @@
         when {{ Average_Score }} >= 5 then 'Below average: 5+'
     end
 {% endmacro %}
-
-
-

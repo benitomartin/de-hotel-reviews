@@ -2,7 +2,7 @@
 
 This folder contains all files generated in dbt cloud. I recommend emptying the folder and initialize the project in dbt. While connecting the repo in dbt, make sure you add the generated deploy key in dbt to your repo under settings, deploy key (allow write access).
 
-Set up: 
+Set up:
 
 - Create as Dataset in BigQuery and make sure it is created using the same region as your bucket.
 

@@ -18,7 +18,7 @@ To upload the data to the GCS Bucket and send them to BigQuery follow the net st
 2. Upload the files to the GCS Bucket:
 
    ```bash
-   python .\etl_data_to_gcs.py 
+   python .\etl_data_to_gcs.py
    ```
 
 3. Send the data to BigQuery:
