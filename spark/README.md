@@ -1,5 +1,7 @@
 # Spark Processing
 
+This folder contains the files to preprocess the raw dataset and generate a SQL Report (BigQuery Table) of the hotel reviews.
+
 ## Saving the files locally
 
 There are two files that allow to save locally the clean dataset and a report after running a SQL Query:
