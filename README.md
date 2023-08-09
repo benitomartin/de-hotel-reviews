@@ -69,6 +69,7 @@ Afterwards some columns have been selected to deploy the final clean data to a G
 
 <h3 align="center"><i>Prefect Deployment</i></h3>
 &nbsp;
+
 ![hotel reviews](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/dbt%20build%20production.png)
 
 On a last step two reports have been produced using Looker Studio after the deployment using dbt. 
