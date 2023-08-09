@@ -53,7 +53,7 @@ The project has been structured with the following folders and files:
 
 ## Project Description
 
-The dataset was obtained from Kaggle and contains various columns with hotel details and reviews of 5 countries ('Austria', 'France', 'Italy', 'Netherlands', 'Spain', 'UK'). To prepare the data an **Exploratory Data Analysis** was conducted. The following actions are performed either using pandas or spark to get a clean data set:
+The dataset was obtained from [Kaggle](https://www.kaggle.com/datasets/jiashenliu/515k-hotel-reviews-data-in-europe) and contains various columns with hotel details and reviews of 5 countries ('Austria', 'France', 'Italy', 'Netherlands', 'Spain', 'UK'). To prepare the data an **Exploratory Data Analysis** was conducted. The following actions are performed either using pandas or spark to get a clean data set:
 
 * Remove rows with NaN
 * Remove duplicates
