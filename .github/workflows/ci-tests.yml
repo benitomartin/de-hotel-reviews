@@ -93,6 +93,9 @@ jobs:
             - name: Set up Terraform
               uses: hashicorp/setup-terraform@v1
 
+            - name: Authenticate with gcloud credentials
+              run: gcloud auth application-default login
+
             - name: TF plan
               working-directory: 'terraform'
               run: |
