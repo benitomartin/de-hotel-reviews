@@ -70,15 +70,25 @@ Afterwards some columns have been selected to deploy the final clean data to a G
 <h3 align="center"><i>Prefect Deployment</i></h3>
 &nbsp;
 
-![hotel reviews](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/dbt%20build%20production.png)
+![gcs deployment](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/etl_to_gcs%20flow.png)
 
-On a last step two reports have been produced using Looker Studio after the deployment using dbt. 
+
+![bq deployment](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/etl_gcs_to_bq%20flow.png)
+
+
+<h3 align="center"><i>dbt Deployment</i></h3>
+&nbsp;
+
+![dbt deployment](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/dbt%20build%20production.png)
+
+## Visualization
 
 ![hotel reviews](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/Hotel%20Reviews.png)
 
 ![hotel reviews](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/Hotel%20Reviews%20France.png)
 
 
+## CI/CD
 Finally, to streamline the development process, a fully automated **CI/CD** pipeline was created using GitHub Actions.
 
 
