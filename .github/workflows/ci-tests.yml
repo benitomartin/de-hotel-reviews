@@ -39,7 +39,7 @@ jobs:
         steps:
             - name: Set up Python
               run: |
-                    conda create -n myenv python=3.8
+                    conda create -n myenv python=3.9
                     conda activate myenv
 
             - name: Install dependencies
