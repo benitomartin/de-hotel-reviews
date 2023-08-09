@@ -43,8 +43,8 @@ jobs:
             - name: Set up Python
               run: |
                     conda create -n myenv python=3.9
-                    conda init bash  # Initialize Conda for the shell
-                    source /usr/share/miniconda/etc/profile.d/conda.sh  # Load Conda functions
+                    # conda init bash  # Initialize Conda for the shell
+                    # source /usr/share/miniconda/etc/profile.d/conda.sh  # Load Conda functions
                     conda activate myenv  # Activate the Conda environment
 
             - name: Install dependencies
