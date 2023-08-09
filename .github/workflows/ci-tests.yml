@@ -12,6 +12,7 @@ on:
       - './**'
 
 env:
+    GOOGLE_PROJECT_ID: ${{ secrets.GOOGLE_PROJECT_ID }}
     GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
     GCS_REGION: "europe-west6"
 
@@ -29,6 +30,7 @@ jobs:
                 service_account_key: ${{ env.GOOGLE_APPLICATION_CREDENTIALS }}
             - name: Authenticate and use Google Cloud SDK
               run: |
+                    gcloud config set project ${{ env.GOOGLE_PROJECT_ID }}
                     gcloud config set compute/region ${{ env.GCS_REGION }}
                     # Your commands using Google Cloud SDK here
 
