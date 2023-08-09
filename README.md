@@ -2,7 +2,7 @@
 
 ![dataset-cover](https://github.com/benitomartin/templates/assets/116911431/88d28c42-a2c8-4632-90c5-f95b57bc0004)
 
-The dataset used for this project has been downloaded from [Kaggle](https://www.kaggle.com/datasets/hellbuoy/car-price-prediction) and a preliminary data analysis was performed (see [notebooks](https://github.com/benitomartin/de-hotel-reviews/tree/main/notebooks) folder), to get some insights for the further project development.
+This is a personal data engineering project based on a hotel reviews [Kaggle](https://www.kaggle.com/datasets/hellbuoy/car-price-prediction) dataset.
 
 Below you can find some instructions to understand the project content. Feel free to clone this repo :wink:
 
@@ -59,7 +59,7 @@ The dataset was obtained from [Kaggle](https://www.kaggle.com/datasets/jiashenli
 * Remove duplicates
 * Create a new column with the country name
 
-Afterwards some columns have been selected the final clean data are ingested to a GCP Bucket and Big Query. This is done either using **Prefect** (see [flows](https://github.com/benitomartin/de-hotel-reviews/tree/main/flows) folder), **dbt** (see [dbt](https://github.com/benitomartin/de-hotel-reviews/tree/main/dbt) folder) and **spark** (see [spark](https://github.com/benitomartin/de-hotel-reviews/tree/main/notebooks) folder).
+Afterwards some columns have been selected the final clean data are ingested to a GCP Bucket and Big Query. This is done either using **Prefect** (see [flows](https://github.com/benitomartin/de-hotel-reviews/tree/main/flows) folder), **dbt** (see [dbt](https://github.com/benitomartin/de-hotel-reviews/tree/main/dbt) folder) or **spark** (see [spark](https://github.com/benitomartin/de-hotel-reviews/tree/main/spark) folder).
 
 <h3 align="center"><i>Prefect Data Ingestion</i></h3>
 &nbsp;
