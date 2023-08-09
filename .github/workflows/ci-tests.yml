@@ -76,7 +76,6 @@ jobs:
             - name: Debug Environment Variables
               run: |
                     echo "BASE_DIR: $BASE_DIR"
-                    echo "DATA_PATH: $DATA_PATH"
 
             - name: Debug Terraform Directory
               run: |
