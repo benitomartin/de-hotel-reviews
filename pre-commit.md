@@ -35,7 +35,7 @@ This file is a quick explanation of the pre-commit hooks
     ```bash
     pre-commit run --all-files
     ```
-![hooks](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/Pre%20Commit%20passed.png)
+[hooks](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/Pre%20Commit%20passed.png)
 
 - Once all tests are passed commit all changes by-passing the hooks:
 
