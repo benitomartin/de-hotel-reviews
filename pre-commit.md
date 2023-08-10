@@ -38,6 +38,9 @@ This file is a quick explanation of the pre-commit hooks
     
 ![hooks](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/Pre%20Commit%20passed.png)
 
+<img align="left" width="100" height="100" src="https://github.com/benitomartin/de-hotel-reviews/blob/main/images/Pre%20Commit%20passed.png">
+
+
 - Once all tests are passed commit all changes by-passing the hooks:
 
     ```bash
