@@ -2,7 +2,7 @@
 
 ![dataset-cover](https://github.com/benitomartin/templates/assets/116911431/88d28c42-a2c8-4632-90c5-f95b57bc0004)
 
-This is a personal data engineering project based on a hotel reviews [Kaggle](https://www.kaggle.com/datasets/hellbuoy/car-price-prediction) dataset.
+This is a personal data engineering project based on a hotel reviews [Kaggle](https://www.kaggle.com/datasets/jiashenliu/515k-hotel-reviews-data-in-europe) dataset.
 
 Below you can find some instructions to understand the project content. Feel free to clone this repo :wink:
 
