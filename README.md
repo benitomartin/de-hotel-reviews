@@ -40,7 +40,7 @@ The project has been structured with the following folders and files:
 
 * `.github:` contains the CI/CD files (GitHub Actions)
 * `data:` raw dataset, saved parquet files and data processed using Spark
-* `dbt:` data transformation done using dbt
+* `dbt:` data transformation and CI/CD pipeline using dbt
 * `flows:` workflow orchestration pipeline
 * `images:` printouts of results
 * `looker:` reports from looker studio
