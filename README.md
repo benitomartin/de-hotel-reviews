@@ -73,7 +73,7 @@ Afterwards some columns have been selected the final clean data are ingested to 
 <h3 align="center"><i>dbt Data Ingestion</i></h3>
 &nbsp;
 
-![dbt deployment](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/dbt%20build%20production.png)
+![dbt deployment](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/dbt%20build%20all%20passed.png)
 
 <h3 align="center"><i>Spark Data Ingestion</i></h3>
 &nbsp;
@@ -90,7 +90,9 @@ Afterwards some columns have been selected the final clean data are ingested to 
 
 Finally, to streamline the development process, a fully automated **CI/CD** pipeline was created using GitHub Actions and dbt as well:
 
-![CICD](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/dbt%20build%20production.png)
+![CICD dbt](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/dbt%20build%20production.png)
+
+![CICD Git](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/CICD%20Github.png)
 
 ## Project Set Up
 
