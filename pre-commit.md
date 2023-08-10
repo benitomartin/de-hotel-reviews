@@ -36,8 +36,6 @@ This file is a quick explanation of the pre-commit hooks
     pre-commit run --all-files
     ```
     
-![hooks](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/Pre%20Commit%20passed.png)
-
 <p align="center">
 <img align="center" width="1000" height="180" src="https://github.com/benitomartin/de-hotel-reviews/blob/main/images/Pre%20Commit%20passed.png">
 </p>
