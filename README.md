@@ -90,7 +90,13 @@ Afterwards some columns have been selected the final clean data are ingested to 
 
 Finally, to streamline the development process, a fully automated **CI/CD** pipeline was created using GitHub Actions and dbt as well:
 
+<h3 align="center"><i>dbt CI/CD</i></h3>
+&nbsp;
+
 ![CICD dbt](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/dbt%20build%20production.png)
+
+<h3 align="center"><i>GitHub Actions CI/CD</i></h3>
+&nbsp;
 
 ![CICD Git](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/CICD%20Github.png)
 
@@ -127,7 +133,7 @@ The Python version used for this project is Python 3.9.
     conda install -c conda-forge terraform
     ```
 
-Each project folder contains a **README.md** file with instructions about how to run the code. I highly recommend creating a virtual environment for each one. Additionally, please note that an **GCP Account**, credentials, and proper IAM roles are necessary for the scripts to function correctly. The following IAM Roles have been used for this project:
+Each project folder contains a **README.md** file with instructions about how to run the code. I highly recommend creating a virtual environment for each one. Additionally, please note that an **GCP Account**, credentials, and proper **IAM** roles are necessary for the scripts to function correctly. The following IAM Roles have been used for this project:
 
 * BigQuery Admin
 * BigQuery Data Editor
