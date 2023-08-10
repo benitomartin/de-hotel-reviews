@@ -39,7 +39,7 @@ This file is a quick explanation of the pre-commit hooks
 ![hooks](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/Pre%20Commit%20passed.png)
 
 <p align="center">
-<img align="center" width="800" height="200" src="https://github.com/benitomartin/de-hotel-reviews/blob/main/images/Pre%20Commit%20passed.png">
+<img align="center" width="900" height="150" src="https://github.com/benitomartin/de-hotel-reviews/blob/main/images/Pre%20Commit%20passed.png">
 </p>
 
 - Once all tests are passed commit all changes by-passing the hooks:
