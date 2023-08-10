@@ -32,7 +32,7 @@ Below you can find some instructions to understand the project content. Feel fre
 * Distributed Processing: **Spark**
 * Data Transformation: **dbt**
 * Data Visualization: **Looker Studio**
-* CICD: **Git**
+* CICD: **Git**, **dbt**
 
 ## Project Structure
 
@@ -88,9 +88,9 @@ Afterwards some columns have been selected the final clean data are ingested to 
 
 ## CI/CD
 
-Finally, to streamline the development process, a fully automated **CI/CD** pipeline was created using GitHub Actions.
+Finally, to streamline the development process, a fully automated **CI/CD** pipeline was created using GitHub Actions and dbt as well:
 
-                                    ***ADD PHOTO***
+![CICD](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/dbt%20build%20production.png)
 
 ## Project Set Up
 
