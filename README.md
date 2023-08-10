@@ -61,7 +61,7 @@ The dataset was obtained from [Kaggle](https://www.kaggle.com/datasets/jiashenli
 * Remove duplicates
 * Create a new column with the country name
 
-Afterwards some columns have been selected the final clean data are ingested to a GCP Bucket and Big Query. This is done either using **Prefect** (see [flows](https://github.com/benitomartin/de-hotel-reviews/tree/main/flows) folder), **dbt** (see [dbt](https://github.com/benitomartin/de-hotel-reviews/tree/main/dbt) folder) or **spark** (see [spark](https://github.com/benitomartin/de-hotel-reviews/tree/main/spark) folder).
+Afterwards some columns have been selected the final clean data are ingested to a GCP Bucket and Big Query. This is done either using **Prefect** (see [flows](https://github.com/benitomartin/de-hotel-reviews/tree/main/flows) folder), **dbt** (see [dbt](https://github.com/benitomartin/de-hotel-reviews/tree/main/dbt) folder) or **Spark** (see [spark](https://github.com/benitomartin/de-hotel-reviews/tree/main/spark) folder).
 
 <h3 align="center"><i>Prefect Data Ingestion</i></h3>
 &nbsp;
