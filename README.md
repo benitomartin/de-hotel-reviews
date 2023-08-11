@@ -66,13 +66,12 @@ Afterwards some columns have been selected the final clean data are ingested to 
 <h3 align="center"><i>Prefect Data Ingestion</i></h3>
 &nbsp;
 
-![gcs deployment](/images/etl_to_gcs flow.png)
-
 <p>
     <img src="/images/etl_to_gcs flow.png"/>
 </p>
-
-![bq deployment](./images/etl_gcs_to_bq flow.png)
+<p>
+    <img src="/images/etl_gcs_to_bq flow.png"/>
+</p>
 
 <h3 align="center"><i>dbt Data Ingestion</i></h3>
 &nbsp;
