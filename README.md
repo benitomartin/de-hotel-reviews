@@ -76,18 +76,25 @@ Afterwards some columns have been selected the final clean data are ingested to 
 <h3 align="center"><i>dbt Data Ingestion</i></h3>
 &nbsp;
 
-![dbt deployment](./images/dbt build all passed.png)
+<p>
+    <img src="/images/dbt build all passed.png"/>
+</p>
 
 <h3 align="center"><i>Spark Data Ingestion</i></h3>
 &nbsp;
 
-![spark deployment](./images/spark deployment all hotels.png)
+<p>
+    <img src="/images/spark deployment all hotels.png"/>
+</p>
 
 ## Visualization
 
-![hotel reviews](./images/Hotel Reviews.png)
-
-![hotel reviews](./images/Hotel Reviews France.png)
+<p>
+    <img src="/images/Hotel Reviews.png"/>
+</p>
+<p>
+    <img src="/images/Hotel Reviews France.png"/>
+</p>
 
 ## CI/CD
 
@@ -96,12 +103,16 @@ Finally, to streamline the development process, a fully automated **CI/CD** pipe
 <h3 align="center"><i>dbt CI/CD</i></h3>
 &nbsp;
 
-![CICD dbt](./images/dbt build production.png)
+<p>
+    <img src="/images/dbt build production.png"/>
+</p>
 
 <h3 align="center"><i>GitHub Actions CI/CD</i></h3>
 &nbsp;
 
-![CICD Git](./images/CICD Github.png)
+<p>
+    <img src="/images/CICD Github.png"/>
+</p>
 
 ## Project Set Up
 
