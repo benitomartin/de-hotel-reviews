@@ -66,14 +66,14 @@ Afterwards some columns have been selected the final clean data are ingested to 
 <h3 align="center"><i>Prefect Data Ingestion</i></h3>
 &nbsp;
 
-![gcs deployment](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/etl_to_gcs%20flow.png)
+![gcs deployment](./images/etl_to_gcs flow.png)
 
-![bq deployment](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/etl_gcs_to_bq%20flow.png)
+![bq deployment](./images/etl_gcs_to_bq flow.png)
 
 <h3 align="center"><i>dbt Data Ingestion</i></h3>
 &nbsp;
 
-![dbt deployment](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/dbt%20build%20all%20passed.png)
+![dbt deployment](./images/dbt build all passed.png)
 
 <h3 align="center"><i>Spark Data Ingestion</i></h3>
 &nbsp;
