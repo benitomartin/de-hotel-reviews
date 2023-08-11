@@ -61,7 +61,7 @@ The dataset was obtained from [Kaggle](https://www.kaggle.com/datasets/jiashenli
 * Remove duplicates
 * Create a new column with the country name
 
-Afterwards some columns have been selected the final clean data are ingested to a GCP Bucket and Big Query. This is done either using **Prefect** (see [flows](https://github.com/benitomartin/de-hotel-reviews/tree/main/flows) folder), **dbt** (see [dbt](https://github.com/benitomartin/de-hotel-reviews/tree/main/dbt) folder) or **Spark** (see [spark](https://github.com/benitomartin/de-hotel-reviews/tree/main/spark) folder).
+Afterwards some columns have been selected the final clean data are ingested to a GCP Bucket and Big Query. This is done either using **Prefect** (see [flows](./flows) folder), **dbt** (see [dbt](./dbt) folder) or **Spark** (see [spark](./spark) folder).
 
 <h3 align="center"><i>Prefect Data Ingestion</i></h3>
 &nbsp;
@@ -78,13 +78,13 @@ Afterwards some columns have been selected the final clean data are ingested to 
 <h3 align="center"><i>Spark Data Ingestion</i></h3>
 &nbsp;
 
-![spark deployment](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/spark%20deployment%20all%20hotels.png)
+![spark deployment](./images/spark deployment all hotels.png)
 
 ## Visualization
 
-![hotel reviews](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/Hotel%20Reviews.png)
+![hotel reviews](./images/Hotel Reviews.png)
 
-![hotel reviews](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/Hotel%20Reviews%20France.png)
+![hotel reviews](./images/Hotel Reviews France.png)
 
 ## CI/CD
 
@@ -93,12 +93,12 @@ Finally, to streamline the development process, a fully automated **CI/CD** pipe
 <h3 align="center"><i>dbt CI/CD</i></h3>
 &nbsp;
 
-![CICD dbt](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/dbt%20build%20production.png)
+![CICD dbt](./images/dbt build production.png)
 
 <h3 align="center"><i>GitHub Actions CI/CD</i></h3>
 &nbsp;
 
-![CICD Git](https://github.com/benitomartin/de-hotel-reviews/blob/main/images/CICD%20Github.png)
+![CICD Git](./images/CICD Github.png)
 
 ## Project Set Up
 
