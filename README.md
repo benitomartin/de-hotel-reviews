@@ -66,7 +66,7 @@ Afterwards some columns have been selected the final clean data are ingested to 
 <h3 align="center"><i>Prefect Data Ingestion</i></h3>
 &nbsp;
 
-![gcs deployment](images/etl_to_gcs flow.png)
+![gcs deployment](/images/etl_to_gcs flow.png)
 
 ![bq deployment](./images/etl_gcs_to_bq flow.png)
 
