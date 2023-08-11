@@ -1,7 +1,7 @@
 # Data Engineering Hotel Reviews
 
 <p>
-    <img src="/images/Cover.png"/>
+    <img src="/images/Cover.jpg"/>
 </p>
 This is a personal data engineering project based on a hotel reviews [Kaggle](https://www.kaggle.com/datasets/jiashenliu/515k-hotel-reviews-data-in-europe) dataset.
 
