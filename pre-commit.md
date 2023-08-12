@@ -37,7 +37,7 @@ This file is a quick explanation of the pre-commit hooks
     ```
     
 <p align="center">
-<img align="center" width="970" height="180" src="../images/Pre Commit passed.png">
+<img align="center" width="970" height="180" src="../images/Pre Commit passed.png"> 
 </p>
 
 - Once all tests are passed commit all changes by-passing the hooks:
