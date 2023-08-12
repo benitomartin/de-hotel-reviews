@@ -37,7 +37,7 @@ This file is a quick explanation of the pre-commit hooks
     ```
     
 <p align="center">
-<img align="center" width="960" height="180" src="../images/pre_commit_passed.png"> 
+<img align="center" width="960" height="180" src="./images/pre_commit_passed.png"> 
 
 </p>
 
