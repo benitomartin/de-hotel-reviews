@@ -46,7 +46,7 @@ The project has been structured with the following folders and files:
 * `flows:` workflow orchestration pipeline
 * `images:` printouts of results
 * `looker:` reports from looker studio
-* `notebooks:` EDA performed at the beginning of the project to stablish a baseline
+* `notebooks:` EDA performed at the beginning of the project to establish a baseline
 * `spark:` batch processing pipeline using spark
 * `terraform:` IaC stream-based pipeline infrastructure in GCP using Terraform
 * `Makefile:` set of execution tasks
@@ -63,7 +63,7 @@ The dataset was obtained from [Kaggle](https://www.kaggle.com/datasets/jiashenli
 * Remove duplicates
 * Create a new column with the country name
 
-Afterwards some columns have been selected the final clean data are ingested to a GCP Bucket and Big Query. This is done either using **Prefect** (see [flows](./flows) folder), **dbt** (see [dbt](./dbt) folder) or **Spark** (see [spark](./spark) folder).
+Afterwards, some columns have been selected the final clean data are ingested to a GCP Bucket and Big Query. This is done either using **Prefect** (see [flows](./flows) folder), **dbt** (see [dbt](./dbt) folder) or **Spark** (see [spark](./spark) folder).
 
 <h3 align="center"><i>Prefect Data Ingestion</i></h3>
 &nbsp;
@@ -120,7 +120,7 @@ Finally, to streamline the development process, a fully automated **CI/CD** pipe
 
 The Python version used for this project is Python 3.9.
 
-1. Clone the repo (or download as zip):
+1. Clone the repo (or download it as zip):
 
    ```bash
    git clone https://github.com/benitomartin/de-hotel-reviews.git
@@ -149,7 +149,7 @@ The Python version used for this project is Python 3.9.
     conda install -c conda-forge terraform
     ```
 
-Each project folder contains a **README.md** file with instructions about how to run the code. I highly recommend creating a virtual environment for each one. Additionally, please note that an **GCP Account**, credentials, and proper **IAM** roles are necessary for the scripts to function correctly. The following IAM Roles have been used for this project:
+Each project folder contains a **README.md** file with instructions about how to run the code. I highly recommend creating a virtual environment for each one. Additionally, please note that a **GCP Account**, credentials, and proper **IAM** roles are necessary for the scripts to function correctly. The following IAM Roles have been used for this project:
 
 * BigQuery Admin
 * BigQuery Data Editor
