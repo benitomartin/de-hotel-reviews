@@ -27,4 +27,4 @@ Then follow the next steps:
     terraform apply -var-file="vars/variables.tfvars"
     ```
 
-These will create the required bucket and bq dataset.
+This will create the required bucket and bq dataset.
