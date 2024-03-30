@@ -11,7 +11,7 @@ First create a `vars` folder and inside a `variables.tfvars` file with the follo
 
 Then follow the next steps:
 
-- Initialize Terraform and apply the configuration:
+- Initialize Terraform:
 
     ```bash
     terraform init
